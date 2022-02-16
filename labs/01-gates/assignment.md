@@ -38,6 +38,10 @@ end architecture dataflow;
 
    [https://www.edaplayground.com/x/G7uT](https://www.edaplayground.com/x/G7uT)
 
+6. Created circuit:
+
+   ![Circuit](images/circ.png)
+
 ### Distributive laws
 
 Testing equation 
