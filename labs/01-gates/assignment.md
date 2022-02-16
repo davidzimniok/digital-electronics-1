@@ -42,7 +42,7 @@ end architecture dataflow;
 
 Testing equation 
  
-   ![Logic function](distributive1.png)
+   ![Logic function](images/distributive1.png)
 
 1. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
