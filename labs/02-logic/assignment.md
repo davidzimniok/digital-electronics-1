@@ -6,21 +6,21 @@
 
    Greater than:
 
-   ![K-maps](images/kmap_empty.png)
+   ![K-maps](images/kmapgrater.png)
 
    Less than:
 
-   ![K-maps](images/kmap_empty.png)
+   ![K-maps](images/kmapless.png)
 
 2. Equations of simplified SoP (Sum of the Products) form of the "greater than" function and simplified PoS (Product of the Sums) form of the "less than" function.
 
-   ![Logic functions](images/comparator_min.png)
+   ![Logic functions](images/equations.png)
 
 ### 4-bit comparator
 
 1. Listing of VHDL stimulus process from testbench file (`testbench.vhd`) with at least one assert (use BCD codes of your student ID digits as input combinations). Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
 
-   Last two digits of my student ID: **xxxx??**
+   Last two digits of my student ID: 230 354 -> 5 4 in BCD (1001 and 1000)
 
 ```vhdl
     p_stimulus : process
@@ -41,6 +41,22 @@
         report "Input combination 1001, 1000 FAILED" severity error;
         
         s_b <= "1001"; 
+        s_a <= "1001"; 
+        wait for 100 ns;
+        assert ((s_B_greater_A = '0') and
+               (s_B_equals_A  = '1') and
+               (s_B_less_A    = '0'))
+        report "Input combination 1001, 1001 FAILED" severity error;
+        
+        s_b <= "1000"; 
+        s_a <= "1001"; 
+        wait for 100 ns;
+        assert ((s_B_greater_A = '0') and
+               (s_B_equals_A  = '0') and
+               (s_B_less_A    = '1'))
+        report "Input combination 1000, 1001 FAILED" severity error;
+        
+        s_b <= "1001"; 
         s_a <= "1000"; 
         wait for 100 ns;
         assert ((s_B_greater_A = '0') and
@@ -56,8 +72,8 @@
 
 2. Text console screenshot during your simulation, including reports.
 
-   ![your figure]()
+   ![output of console](imgages/console.png)
 
 3. Link to your public EDA Playground example:
 
-   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
+   [https://www.edaplayground.com/x/D9pt](https://www.edaplayground.com/x/D9pt)
