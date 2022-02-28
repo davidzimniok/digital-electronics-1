@@ -2,7 +2,9 @@
 
 ## Preparation tasks (done before the lab at home)
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of 7-segment displays, ie to which FPGA pins are connected and how.
+1. from [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) 
+
+![Connection of seven-segment display](https://digilent.com/reference/_detail/reference/programmable-logic/nexys-a7/n4t.png?id=programmable-logic%3Anexys-a7%3Areference-manual)
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
