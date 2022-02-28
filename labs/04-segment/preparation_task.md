@@ -4,7 +4,7 @@
 
 1. from [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) 
 
-![Connection of seven-segment display](https://digilent.com/reference/_detail/reference/programmable-logic/nexys-a7/n4t.png?id=programmable-logic%3Anexys-a7%3Areference-manual)
+![Connection of seven-segment display](https://digilent.com/reference/_media/reference/programmable-logic/nexys-a7/n4t.png?w=500&tok=d7fb74)
 
 2. Complete the decoder truth table for **common anode** 7-segment display.
 
