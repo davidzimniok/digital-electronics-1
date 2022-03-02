@@ -1,59 +1,35 @@
-# Lab 3: David ZIMNIOK
-
-### Three-bit wide 4-to-1 multiplexer
-
-1. Listing of VHDL architecture from source file `mux_3bit_4to1.vhd`. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
-
-```vhdl
-entity mux_3bit_4to1 is
-    Port ( a_i : in STD_LOGIC_VECTOR (2 downto 0);
-           b_i : in STD_LOGIC_VECTOR (2 downto 0);
-           c_i : in STD_LOGIC_VECTOR (2 downto 0);
-           d_i : in STD_LOGIC_VECTOR (2 downto 0);
-           sel_i : in STD_LOGIC_VECTOR (1 downto 0);
-           f_o : out STD_LOGIC_VECTOR (2 downto 0));
-end mux_3bit_4to1;
-
-architecture Behavioral of mux_3bit_4to1 is
-
-begin
-    with sel_i select
-        f_o <=  a_i when "00",
-                b_i when "01",
-                c_i when "10",
-                d_i when others;
-end Behavioral;
-```
-
-2. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
-
-   ![simulation of function](images/simulation.png)
-
-3. Listing of pin assignments for the Nexys A7 board in `nexys-a7-50t.xdc`. **DO NOT list** the whole file, just your switch and LED settings.
-
-```shell
-##Switches
+set_property SRC_FILE_INFO {cfile:D:/Documents/xzimni00/digital-electronics-1/labs/03-vivado/multiplexer/multiplexer.srcs/constrs_1/new/nexys-a7-50t.xdc rfile:../../../multiplexer.srcs/constrs_1/new/nexys-a7-50t.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { sel_i[0] }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { sel_i[1] }]; #IO_L3N_T0_DQS_EMCCLK_14 Sch=sw[1]
-
+set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R17   IOSTANDARD LVCMOS33 } [get_ports { d_i[0] }]; #IO_L12N_T1_MRCC_14 Sch=sw[4]
+set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports { d_i[1] }]; #IO_L7N_T1_D10_14 Sch=sw[5]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { d_i[2] }]; #IO_L17N_T2_A13_D29_14 Sch=sw[6]
-
+set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R13   IOSTANDARD LVCMOS33 } [get_ports { c_i[0] }]; #IO_L5N_T0_D07_14 Sch=sw[7]
+set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T8    IOSTANDARD LVCMOS18 } [get_ports { c_i[1] }]; #IO_L24N_T3_34 Sch=sw[8]
+set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS18 } [get_ports { c_i[2] }]; #IO_25_34 Sch=sw[9]
-
+set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { b_i[0] }]; #IO_L15P_T2_DQS_RDWR_B_14 Sch=sw[10]
+set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T13   IOSTANDARD LVCMOS33 } [get_ports { b_i[1] }]; #IO_L23P_T3_A03_D19_14 Sch=sw[11]
+set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H6    IOSTANDARD LVCMOS33 } [get_ports { b_i[2] }]; #IO_L24P_T3_35 Sch=sw[12]
-
+set_property src_info {type:XDC file:1 line:17 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { a_i[0] }]; #IO_L20P_T3_A08_D24_14 Sch=sw[13]
+set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { a_i[1] }]; #IO_L19N_T3_A09_D25_VREF_14 Sch=sw[14]
+set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { a_i[2] }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
-
-## LEDs
+set_property src_info {type:XDC file:1 line:22 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { f_o[0] }]; #IO_L17P_T2_A14_D30_14 Sch=led[6]
+set_property src_info {type:XDC file:1 line:23 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS33 } [get_ports { f_o[1] }]; #IO_L18P_T2_A12_D28_14 Sch=led[7]
+set_property src_info {type:XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { f_o[2] }]; #IO_L16N_T2_A15_D31_14 Sch=led[8]
-```
