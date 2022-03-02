@@ -69,6 +69,7 @@ begin
             s_sel <= "11";
             assert (s_fo = "011")
             report "Bad output on D selected" severity error;
+            wait for 100 ns;
             s_sel <= "00";
             assert (s_fo = "111")
             report "Bad output on A selected" severity error;
