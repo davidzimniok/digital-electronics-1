@@ -1,10 +1,32 @@
-# Lab 4: David ZIMNIOK
+library ieee;
+use ieee.std_logic_1164.all;
 
-### Seven-segment display decoder
+------------------------------------------------------------
+-- Entity declaration for testbench
+------------------------------------------------------------
+entity tb_hex_7seg is
+    -- Entity of testbench is always empty
+end entity tb_hex_7seg;
 
-1. Listing of VHDL stimulus process from testbench file (`tb_hex_7seg.vhd`) with asserts. Verify all input combinations. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
+------------------------------------------------------------
+-- Architecture body for testbench
+------------------------------------------------------------
+architecture testbench of tb_hex_7seg is
 
-```vhdl
+    -- Local signals
+    signal s_hex  : std_logic_vector(3 downto 0);
+    signal s_seg  : std_logic_vector(6 downto 0);
+
+begin
+    uut_hex_7seg : entity work.hex_7seg
+        port map(
+            hex_i => s_hex,
+            seg_o => s_seg
+        );
+
+    --------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------
     p_stimulus : process
     begin
         report "Stimulus process started" severity note;
@@ -61,35 +83,5 @@
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
-```
 
-2. Screenshot with simulated time waveforms. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
-
-   ![your figure](images/prubeh.png)
-
-### LED(7:4) indicators
-
-1. Listing of LEDs(7:4) part of VHDL architecture from source file `top.vhd`. Try to write logic functions as simple as possible. Always use syntax highlighting, meaningful comments, and follow VHDL guidelines:
-
-   ```vhdl
-       -- Experiments on your own: LED(7:4) indicators
-    -- Turn LED(4) on if input value is equal to 0, ie "0000"
-    with SW select
-        LED(4) <=   '1' when "0000",
-                    '0' when others;
-
-    -- Turn LED(5) on if input value is greater than "1001", ie 10, 11, 12, ...
-    LED(5) <= (SW(3) AND SW(2)) OR (SW(3) AND SW(1));
-  
-    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-    LED(6) <= SW(0);
-    
-    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-    with SW select
-        LED(7) <=   '1' when "0001",
-                    '1' when "0010",
-                    '1' when "0100",
-                    '1' when "1000",
-                    '0' when others; 
-
-   ```
+end architecture testbench;
