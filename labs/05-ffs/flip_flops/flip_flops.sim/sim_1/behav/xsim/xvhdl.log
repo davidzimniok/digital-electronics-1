@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Documents/xzimni00/digital-electronics-1/labs/05-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_fdivider.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_fdivider'
+ERROR: [VRFC 10-985] literal 100000000000000 exceeds maximum integer value [D:/Documents/xzimni00/digital-electronics-1/labs/05-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_fdivider.vhd:37]
+ERROR: [VRFC 10-3782] unit 'testbench' ignored due to previous errors [D:/Documents/xzimni00/digital-electronics-1/labs/05-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_fdivider.vhd:14]
+INFO: [VRFC 10-3070] VHDL file 'D:/Documents/xzimni00/digital-electronics-1/labs/05-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_fdivider.vhd' ignored due to errors
