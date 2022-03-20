@@ -45,4 +45,6 @@ end architecture Behavioral;
 
    ![your figure](images/schematic2.png)
    
-note: Added a frequency divider for better visibility on real board. After lab I have find out that schematic from Vivado don`t show all connections properly. But function and top entity are right. The same schematic was genereated for version without frequency divider.
+note: Added a frequency divider for better visibility on real board. After lab I have find out that schematic from Vivado don`t show all connections properly. But function and top entity are right. The same schematic was genereated for version without frequency divider. So I have created hand draw schematic.
+
+   ![your figure](images/scho.png)
