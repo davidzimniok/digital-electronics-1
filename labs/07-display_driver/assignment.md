@@ -50,5 +50,5 @@
 
 1. Image of the 8-digit driver's block schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components, and internal signals!
 
-note: This schematic shows connection realized in module named top.
-   ![your figure](images/sch.png)
+note: This schematic shows connection realized in module named top. Red values are routed directly to voltage level of written logic values. The input to the circuit is changeable for right 4 7seg displays - value can be influence by changing combination of switches. This value will be always in format X.XXX. Left four 7seg displays are static routed to value 3.142.
+   ![your figure](images/sch1.png)
