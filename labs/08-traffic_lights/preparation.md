@@ -10,7 +10,8 @@
 | LD17 | N16, R11, G14 | `1,0,0` | `1,1,0` | `0,1,0` |
 
 2. See schematic or reference manual of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
-| :-: | :-: | :-: | :-: |
+
+
 | **Pmod JA**    | **Pmod JB**    | **Pmod JC**  | **Pmod JD** |
 | :-: | :-: | :-: | :-: |
 | JA1: C17   | JB1: D14   | JC1: K1  | JD1: H4  |
@@ -21,4 +22,3 @@
 | JA8: E17   | JB8: F13   | JC8: J3  | JD8: G4  |
 | JA9: F18   | JB9: G13   | JC9: J4  | JD9: G2  |
 | JA10: G18  | JB10: H16  | JC10: E6 | JD10: F3 |
-| :-: | :-: | :-: | :-: |
